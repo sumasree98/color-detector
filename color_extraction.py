@@ -21,14 +21,15 @@ def get_dominant_color(image, k, image_processing_size = None):
     return dominant_colors
 
 cap = cv2.VideoCapture(0)
-ret, frame = cap.read()
-cv2.imshow("capture",frame)
-cv2.waitKey(0)
-#while(True):
-#    ret, frame = cap.read()
-#    cv2.imshow('frame',frame)
-#    if cv2.waitKey(1) & 0xFF == ord('q'):
-#        break
+#ret, frame = cap.read()
+#cv2.imshow("capture",frame)
+#cv2.waitKey(0)
+while(True):
+    global frame
+    ret, frame = cap.read()
+    cv2.imshow('frame',frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
 cap.release()
 cv2.destroyAllWindows()
 
